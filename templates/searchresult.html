@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title> Cart </title>
+        <link rel="stylesheet" href="/static/homepage.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        </head>
+        <body>
+            <h1>Sophia's Favorite Video Games<img src="/static/giphy.gif" alt="gif" style="width:48px;height:48px;"></h1>
+            <div class="topnav">
+                <a class="active" href="http://10.3.57.145:8080/home">Everything</a>
+                <a href="http://10.3.57.145:8080/switch_home">Nintendo Switch</a>
+                <a href="http://10.3.57.145:8080/playstation_home">PlayStation 5</a>
+                <a href="http://10.3.57.145:8080/pc_home">PC</a>
+                <a href="http://10.3.57.145:8080/cart">Cart</a>
+                <a href="http://10.3.57.145:8080/orderhistory">Order History</a>
+                <a href="http://10.3.57.145:8080/search">Search</a>
+                <a><form action="/" method="POST">
+                    <button type="hidden" name="logout" value="log out">Log Out</button>
+                </form></a>
+            </div>
+            <h4>Search Results:</h4>
+            <div class="container">
+                {% for i in products: %}
+                <div><img src="/static/{{i[5]}}" alt ="photo" style="width:128px;height:128px;">
+                    <br>{{i[1]}}
+                    <br>Price: ${{i[2]}}
+                    <br>Stock: {{i[3]}}
+                    <form action="/cart" method="POST">
+                        <button type="hidden" name="add" value={{i[0]}}><img src="/static/Add_to_Cart-removebg-preview.png" alt ="addtocartphoto" style="width:80px;height:80px;"></button>
+                    </form>
+                    <br><br> 
+                </div>
+                {% endfor %}
+            </div>
+        
+    </body>
+</html>
