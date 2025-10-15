@@ -7,4 +7,5 @@ Hi URBN! Welcome to my shopping cart project, a revamped version of a website I 
 * JSON
 * & SQL databases!
 
-The link to this website is
+Because this implementation uses Flask to communicate with the databases, this is only a front end demo.
+The link to this website is 
